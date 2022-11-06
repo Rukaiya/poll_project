@@ -1,4 +1,6 @@
 from django.shortcuts import render
+from .forms import CreatePollForm
+from .models import Poll
 
 # Create your views here.
 def home(request):
@@ -7,7 +9,10 @@ def home(request):
 
 
 def create (request):
-    context = {}
+    form = CreatePollForm()
+    context = {
+        'form': form,
+    }
     return render(request, 'poll/create.html', context)
 
 
