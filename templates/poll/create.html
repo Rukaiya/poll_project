@@ -2,11 +2,12 @@
 {% load widget_tweaks %}
 
 {% block content %}
-<form class="mx-auto">
+<form class="mx-auto" method="post">
+    {% csrf_token %}
     <div class="row">
-        <div class="col-6">
+        <div class="col-9">
             <label for="question" class="form-label">Enter Your Question Here</label>
-            {% render_field form.question class="form-control" %}
+            {% render_field form.question class="form-control" rows="3" %}
         </div>
     </div>
     <div class="row">
