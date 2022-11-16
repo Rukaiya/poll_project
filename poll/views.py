@@ -4,7 +4,8 @@ from .models import Poll
 
 # Create your views here.
 def home(request):
-    context = {}
+    polls = Poll.objects.all()
+    context = {'polls': polls}
     return render(request, 'poll/home.html', context)
 
 
@@ -24,7 +25,12 @@ def create (request):
 
 
 def vote(request, poll_id):
-    context = {}
+    poll = Poll.objects.get(pk=poll_id)
+
+    if request.method == 'POST':
+        print(request.POST)
+    
+    context = {'poll': poll}
     return render(request, 'poll/vote.html', context)
 
 

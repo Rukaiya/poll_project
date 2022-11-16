@@ -1,0 +1,8 @@
+<form action="" method="post">
+    {% csrf_token %}
+
+    <input type="radio" id="option1" name="option1">
+    {{poll.option_one}}
+
+    <input type="submit" value="Submit">
+</form>
