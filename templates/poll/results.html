@@ -1,4 +1,10 @@
 {% extends 'poll/base.html'%}
 {% block content %}
+<h3>{{poll.question}}</h3>
+
+<p>{{poll.option_one}} &#8212; {{poll.option_one_count}}</p>
+<p>{{poll.option_two}} &#8212; {{poll.option_two_count}}</p>
+<p>{{poll.option_three}} &#8212; {{poll.option_three_count}}</p>
+<p>Total: {{poll.total}}</p>
 
 {% endblock %}

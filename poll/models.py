@@ -13,4 +13,6 @@ class Poll(models.Model):
 
     def __str__(self) -> str:
         return self.question
-    
+
+    def total(self):
+        return self.option_one_count + self.option_two_count + self.option_three_count
